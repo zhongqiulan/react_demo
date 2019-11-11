@@ -1,46 +1,43 @@
-// App.js是项目的根组件文件 在App.js里面创建一个根组件
-
-// 1. 引入React的基本包
-
 import React from 'react'
-// 如果要使用HelloComponent组件 需要导入进来
-import HelloComponent from './components/HelloComponent'
-//如果要使用HahaComponent组件 也要导入进来
-import HahaComponent from './components/HahaComponent'
-// 导入有状态的组件
-import StateComponent from './components/StateComponent'
-// 导入事件组件
-import EventComponent from './components/EventComponent'
-// 定义一个变量 对象形式的变量 变量必须放到写JS代码的地方 在函数里面 或者全局定义变量
-const user = {
-	name: '张三',
-	age: 18
+// 导入自己创建的HelloWorld组件 注意必须带上相对的路径 不然会去node_module里面找
+import HelloWorld from './components/HelloWorld'
+// 如果导入的不是默认组件 需要带{}
+import {HelloWorld1} from './components/HelloWorld'
+import NoState from './components/NoState'
+// 使用有状态的组件
+import State from './components/State'
+// 导入事件的组件
+import Event from './components/Event'
+const name = '张三';
+function fun() {
+	return <div>嘿嘿嘿</div>
 }
-// class是定义组件关键字
-// App 组件的名称 必须是以大写字母开头
-// React.Component 是组件的父类 （基本的组件）
-// extends是继承
-export default class App extends React.Component {
-	// 组件必须要有返回值
-	// render是渲染组件的函数 渲染的时候必须有返回值
-	// 在jsx中 表达式使用单括号 和 ng vue 的表达式写法不太一样 
-	// 返回值如果有多个标签要用一个容器包装起来
-	render() {
+
+// 业务逻辑代码在根组件里面写
+// 定义App根组件 并导出
+export default class App extends React.Component{
+	// 根组件里面就来调用别组件
+	render(){
 		return <div>
-			<div>hello world!{1 + 1} <br />名称：{user.name} <br />年龄： {user.age}</div>
-			<div>
-				这是第二个div
-				 </div>
-			<h2>It is {new Date().toLocaleTimeString()}.</h2>
-			{/*这是注释 使用HelloComponent组件*/}
-			<HelloComponent name="李四"></HelloComponent>
-			<HahaComponent name="张三" age={18} user={{ name: '张三', age: 18 }}></HahaComponent>
-			<StateComponent money={5000000000}></StateComponent>
-			<EventComponent></EventComponent>
-		</div>
+				<Event></Event>
+				<NoState time={new Date().toLocaleTimeString()}></NoState>
+				<State></State>
+		    <HelloWorld name="张三"></HelloWorld>
+		    <HelloWorld1 name="李四"></HelloWorld1>
+		    {/*
+		      <HelloWorld1 name={1}></HelloWorld1>
+		      <HelloWorld1 name={true}></HelloWorld1>
+		      <HelloWorld1 name={['张三','李四']}></HelloWorld1>
+		      <HelloWorld1 name={{name:'张三'}}></HelloWorld1>
+		    */}    
+		  	哈哈哈哈
+		  	<h3>{name}</h3>
+		  	<h2>{fun()}</h2>
+		  	<h1>{Math.random()}</h1>
+		  	<h1>{new Date().toLocaleString()}</h1>
+		  	<img src="./src/a.png" alt=""/>
+		  	<h1>嘻嘻嘻</h1>
+		  	<h2>洗衣服</h2>
+		  </div>
 	}
 }
-
-// 组件如果需要在别的地方使用 需要导入
-
-// export default App
