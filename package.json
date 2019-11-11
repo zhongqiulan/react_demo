@@ -1,20 +1,24 @@
 {
-  "name": "react-demo1",
+  "name": "react-demo",
   "version": "1.0.0",
   "description": "",
-  "main": "webpack.config.dev.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --config webpack.config.dev.js --open"
+    "dev": "webpack-dev-server --progress --config webpack.config.dev.js --port 6008 --open"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.4",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2"
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1"
+  },
+  "devDependencies": {
+    "babel-core": "6.26.0",
+    "babel-loader": "7.1.4",
+    "babel-preset-react": "6.24.1",
+    "html-webpack-plugin": "3.2.0",
+    "webpack": "3.5.0",
+    "webpack-dev-server": "2.11.0"
   }
 }
