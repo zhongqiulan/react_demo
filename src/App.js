@@ -11,6 +11,7 @@ import HahaComponent from './components/HahaComponent'
 import StateComponent from './components/StateComponent'
 // 导入事件组件
 import EventComponent from './components/EventComponent'
+import TestComponent from './components/TestComponent'
 // 定义一个变量 对象形式的变量 变量必须放到写JS代码的地方 在函数里面 或者全局定义变量
 const user = {
 	name: '张三',
@@ -27,16 +28,22 @@ export default class App extends React.Component {
 	// 返回值如果有多个标签要用一个容器包装起来
 	render() {
 		return <div>
+			{Math.random()}
+			
+			{new Date().getHours()}
 			<div>hello world!{1 + 1} <br />名称：{user.name} <br />年龄： {user.age}</div>
+			
 			<div>
 				这是第二个div
 				 </div>
-			<h2>It is {new Date().toLocaleTimeString()}.</h2>
+			<h2>It is {new Date().toLocaleTimeString()}</h2>
 			{/*这是注释 使用HelloComponent组件*/}
 			<HelloComponent name="李四"></HelloComponent>
 			<HahaComponent name="张三" age={18} user={{ name: '张三', age: 18 }}></HahaComponent>
 			<StateComponent money={5000000000}></StateComponent>
 			<EventComponent></EventComponent>
+			<TestComponent  name="张三" user={{ name: '张三', age: 18 }}></TestComponent>
+			
 		</div>
 	}
 }

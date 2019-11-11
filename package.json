@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --progress --config webpack.config.dev.js --port 6008 --open"
+    "dev": "webpack-dev-server --progress --config webpack.config.dev.js --port 6009 --open"
   },
   "author": "",
   "license": "ISC",
